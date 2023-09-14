@@ -6,20 +6,20 @@ import { faCartShopping, faUser, faSearch } from "@fortawesome/free-solid-svg-ic
 export default function Navigation() {
     return (
         <nav className="nav-bar">
-        <div>
-            <img src={karismaCoLogo} alt="karisma.co-logo" />
-            <h3>Karisma.Co</h3>
-        </div>
-        <ul>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/products">Our Products</NavLink></li>
-            <li><NavLink to="/contacts">Contact Us</NavLink></li>
-        </ul>
-        <ul>
-            <FontAwesomeIcon icon={faSearch} />
-            <FontAwesomeIcon icon={faUser} />
-            <FontAwesomeIcon icon={faCartShopping} />
-        </ul>
-      </nav>
+            <div>
+                <img src={karismaCoLogo} alt="karisma.co-logo" />
+                <h3>Karisma.Co</h3>
+            </div>
+            <ul>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/products">Our Products</NavLink></li>
+                <li><NavLink to="/contacts">Contact Us</NavLink></li>
+            </ul>
+            <ul>
+                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon={faUser} />
+                <FontAwesomeIcon icon={faCartShopping} />
+            </ul>
+        </nav>
     );
 }

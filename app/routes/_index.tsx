@@ -3,7 +3,6 @@ import globalStyle from "~/styles/global.css";
 import bannerImage from "app/assets/banner.jpg"
 
 import Headliner from "~/components/Headliner";
-import Navigation from "~/components/Navigation";
 import ProductCard from "~/components/Product-Card";
 import SectionHeader from "~/components/SectionHeader";
 
@@ -11,21 +10,17 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: globalStyle }
 ];
 
-// FIX this when for SEO
+// FIX this for SEO
 export const meta: V2_MetaFunction = () => {
   return [
     { title: "Karisma.Co" },
-    { name: "Index", content: "Welcome to Karisma.Co!" },
+    { name: "Home", content: "Welcome to Karisma.Co!" },
   ];
 };
-
-
 
 export default function Index() {
   return (
     <>
-      <Headliner />
-      <Navigation />
       <div className="banner">
         <img className="banner-img" src={bannerImage} alt="banner-image" />
         <h1>Bring Out The<br />Confidence In Women</h1>

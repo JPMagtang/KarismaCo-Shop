@@ -1,5 +1,3 @@
-
-
 export default function SectionHeader(props: any) {
     return (
         <div className="section-header">

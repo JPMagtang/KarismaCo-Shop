@@ -2,8 +2,6 @@ import type { V2_MetaFunction, LinksFunction } from "@remix-run/node";
 import globalStyle from "~/styles/global.css";
 import productsBanner from "app/assets/banner-products.jpg"
 
-import Headliner from "~/components/Headliner";
-import Navigation from "~/components/Navigation";
 import ProductCard from "~/components/Product-Card";
 
 export const links: LinksFunction = () => [
@@ -13,15 +11,13 @@ export const links: LinksFunction = () => [
 export const meta: V2_MetaFunction = () => {
   return [
     { title: "Karisma.Co" },
-    { name: "Products", content: "Shop with us at Karisma.Co." },
+    { name: "Our Products", content: "Shop with us at Karisma.Co." },
   ];
 };
 
 export default function OurProducts() {
   return (
     <>
-      <Headliner />
-      <Navigation />
       <div className="products-banner">
         <div className="products-banner-backing">
           <div>
@@ -83,7 +79,6 @@ export default function OurProducts() {
         </div> */}
       </div>
       <div className="section-liner footer" />
-      <Headliner />
     </>
   );
 }
