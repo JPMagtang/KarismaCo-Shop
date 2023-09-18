@@ -1,19 +1,27 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
+import { useState, useEffect, useRef } from 'react';
 import {
   Links,
   LiveReload,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation
 } from "@remix-run/react";
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
+import AnimatedOutlet from "./components/AnimatedOutlet";
 import Layout from "./components/Layout";
+import Loader from "./components/Loader";
+
+import loaderStyle from "~/styles/loader.css";
 import navigationStyle from "~/styles/navigation.css";
+import transitionStyle from "~/styles/transition.css"
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: navigationStyle }
+  { rel: "stylesheet", href: navigationStyle },
+  { rel: "stylesheet", href: loaderStyle },
+  { rel: "stylesheet", href: transitionStyle }
 ];
 
 function Document({ children }: { children: React.ReactNode }) {
@@ -36,11 +44,35 @@ function Document({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+
+  const location = useLocation()
+  const nodeRef = useRef(null)
+
+  const [isLoading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    },3000);
+  }, []);
+
   return (
     <Document>
-      <Layout>
-        <Outlet />
-      </Layout>
+      {isLoading ? <Loader /> : (<Layout>
+        <SwitchTransition>
+          {/* Make this transition a glitch effect. */}
+          <CSSTransition
+            key={location.pathname}
+            timeout={300}
+            nodeRef={nodeRef}
+            classNames="fade"
+          >
+            <div ref={nodeRef} className="transition-all">
+              <AnimatedOutlet />
+            </div>
+          </CSSTransition>
+        </SwitchTransition>
+      </Layout>)}
     </Document>
   );
 }
