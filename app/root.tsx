@@ -48,9 +48,8 @@ export default function App() {
   const location = useLocation()
   const nodeRef = useRef(null)
 
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(true);
     setTimeout(() => {
       setLoading(false);
     },3000);
