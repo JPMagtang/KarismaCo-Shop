@@ -14,14 +14,16 @@ import AnimatedOutlet from "./components/AnimatedOutlet";
 import Layout from "./components/Layout";
 import Loader from "./components/Loader";
 
-import loaderStyle from "~/styles/loader.css";
-import navigationStyle from "~/styles/navigation.css";
-import transitionStyle from "~/styles/transition.css"
+import styleLoader from "~/styles/loader.css";
+import styleNavigation from "~/styles/navigation.css";
+import styleTailwind from "../styles/tailwind.css";
+import styleTransition from "~/styles/transition.css"
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: navigationStyle },
-  { rel: "stylesheet", href: loaderStyle },
-  { rel: "stylesheet", href: transitionStyle }
+  { rel: "stylesheet", href: styleLoader },
+  { rel: "stylesheet", href: styleNavigation },
+  { rel: "stylesheet", href: styleTailwind },
+  { rel: "stylesheet", href: styleTransition }
 ];
 
 function Document({ children }: { children: React.ReactNode }) {
