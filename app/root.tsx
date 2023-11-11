@@ -16,14 +16,16 @@ import Loader from "./components/Loader";
 
 import faviconURL from "./assets/logo.png";
 import styleLoader from "~/styles/loader.css";
-import styleNavigation from "~/styles/navigation.css";
+import styleGlobal from "~/styles/global.css";
+// import styleNavigation from "~/styles/navigation.css";
 import styleTailwind from "../styles/tailwind.css";
-import styleTransition from "~/styles/transition.css"
+import styleTransition from "~/styles/transition.css";
 
 export const links: LinksFunction = () => [
   { rel: "icon", href:`${faviconURL}`, type: "image/png" },
   { rel: "stylesheet", href: styleLoader },
-  { rel: "stylesheet", href: styleNavigation },
+  { rel: "stylesheet", href: styleGlobal },
+  // { rel: "stylesheet", href: styleNavigation },
   { rel: "stylesheet", href: styleTailwind },
   { rel: "stylesheet", href: styleTransition }
 ];
