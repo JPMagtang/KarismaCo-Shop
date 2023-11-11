@@ -9,7 +9,7 @@ export default function Layout({children}: LayoutProps) {
         <div className="layout">
             <Navigation />
             <div className="layout-container">
-                <div className="spacer h-130px"></div>
+                <div className="spacer h-100px"></div>
                 {children}
             </div>
         </div>

@@ -21,6 +21,10 @@ export default {
       "260px": "260px", 
       "350px": "350px"
     },
+    borderWidth: {
+      "1.5px":"1.5px",
+      "2px":"2px",
+    },
     extend: {},
   },
   plugins: [],

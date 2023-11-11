@@ -4,7 +4,7 @@ export default function ProductCard(props:any) {
     return (
       <div 
         className="product max-h-350px h-350px max-w-260px w-260px 
-          flex flex-col p-10px hover:shadow-lg hover:scale-105 rounded-md ease-in-out duration-300" 
+          flex flex-col p-10px hover:shadow-lg hover:cursor-pointer hover:scale-105 rounded-md ease-in-out duration-300" 
         id={props.id}
       >
           <img

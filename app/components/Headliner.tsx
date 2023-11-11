@@ -9,7 +9,7 @@ import {
 export default function Headliner() {
     return (
         <div className="headliner w-full bg-blue-placebo px-100px h-30px flex items-center top-0 left-0" >
-            <ul className="flex gap-30px items-center text-2xl">
+            <ul className="flex gap-30px items-center text-xl">
                 <FontAwesomeIcon icon={faFacebook} />
                 <FontAwesomeIcon icon={faSquareXTwitter} />
                 <FontAwesomeIcon icon={faInstagramSquare} />

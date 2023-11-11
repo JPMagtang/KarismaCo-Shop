@@ -1,5 +1,4 @@
 import type { V2_MetaFunction, LinksFunction } from "@remix-run/node";
-import globalStyle from "~/styles/global.css";
 import bannerImage from "app/assets/banner.jpg"
 
 import Headliner from "~/components/Headliner";
@@ -8,22 +7,17 @@ import ProductCard from "~/components/elements/ProductCard";
 import RedirectButton from "~/components/elements/RedirectButton";
 import SectionHeader from "~/components/SectionHeader";
 
-// export const links: LinksFunction = () => [
-//   { rel: "stylesheet", href: globalStyle }
-// ];
-
 // FIX this for SEO
 export const meta: V2_MetaFunction = () => {
   return [
     { title: "Karisma.Co" },
-    { name: "Home", content: "Welcome to Karisma.Co!" },
+    { name: "Home", content: "Welcome to Karisma.Co online shop!" },
   ];
 };
 
-
 export default function Index() {
   const products = productsData
-  .slice(0,4)  
+  .slice(0,5)  
   .map((product) => {
       return (
         <ProductCard 
@@ -46,7 +40,7 @@ export default function Index() {
       {/* To fix responsiveness later */}
       <SectionHeader headerTitle="Featured Collection" />
       <div className="featured">
-        <div className="products px-100px flex flex-wrap gap-50px justify-center">
+        <div className="products px-50px flex flex-wrap gap-50px justify-center">
           {products}
         </div>
         <div className="mt-50px">

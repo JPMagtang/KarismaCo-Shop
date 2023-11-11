@@ -8,13 +8,9 @@ export default function RedirectButton(props:any) {
               type="button"
               className="w-230px h-50px rounded-2xl text-xl content-center 
                 hover:text-gold-digger hover:scale-105 ease-in-out duration-300 
-                bg-white-chalk border-solid border-2 border-gold-digger"
+                bg-white-chalk border-solid border-2px border-gold-digger"
             >{props.text}</button>
           </Link>
         </div>
     )
 }
-
-{/* <div className="button-container">
-          <button type="button">Shop Now</button>
-        </div> */}
