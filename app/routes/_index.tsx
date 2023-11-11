@@ -1,44 +1,53 @@
 import type { V2_MetaFunction, LinksFunction } from "@remix-run/node";
-import globalStyle from "~/styles/global.css";
 import bannerImage from "app/assets/banner.jpg"
 
 import Headliner from "~/components/Headliner";
-import ProductCard from "~/components/Product-Card";
+import productsData from "~/productsData";
+import ProductCard from "~/components/elements/ProductCard";
+import RedirectButton from "~/components/elements/RedirectButton";
 import SectionHeader from "~/components/SectionHeader";
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: globalStyle }
-];
 
 // FIX this for SEO
 export const meta: V2_MetaFunction = () => {
   return [
     { title: "Karisma.Co" },
-    { name: "Home", content: "Welcome to Karisma.Co!" },
+    { name: "Home", content: "Welcome to Karisma.Co online shop!" },
   ];
 };
 
 export default function Index() {
+  const products = productsData
+  .slice(0,5)  
+  .map((product) => {
+      return (
+        <ProductCard 
+          key={product.id}
+          {...product}
+        />
+      )
+    }
+  )
   return (
     <>
       <div className="banner">
         <img className="banner-img" src={bannerImage} alt="banner-image" />
         <h1>Bring Out The<br />Confidence In Women</h1>
-        <div className="button-container">
-          <button type="button">Shop Now</button>
-        </div>
+        <RedirectButton 
+          href="/products"
+          text="Shop Now"
+        />
       </div>
       {/* To fix responsiveness later */}
       <SectionHeader headerTitle="Featured Collection" />
       <div className="featured">
-        <div className="products">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        <div className="products px-50px flex flex-wrap gap-50px justify-center">
+          {products}
         </div>
-        <div className="button-container">
-          <button type="button">See More</button>
+        <div className="mt-50px">
+          <RedirectButton 
+            href="/products"
+            text="See More"
+          />
         </div>
       </div>
       <SectionHeader headerTitle="About Us" />

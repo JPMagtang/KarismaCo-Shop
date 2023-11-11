@@ -2,11 +2,12 @@ import type { V2_MetaFunction, LinksFunction } from "@remix-run/node";
 import globalStyle from "~/styles/global.css";
 import productsBanner from "app/assets/banner-products.jpg"
 
-import ProductCard from "~/components/Product-Card";
+import productsData from "~/productsData";
+import ProductCard from "~/components/elements/ProductCard";
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: globalStyle }
-];
+// export const links: LinksFunction = () => [
+//   { rel: "stylesheet", href: globalStyle }
+// ];
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -16,6 +17,14 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export default function OurProducts() {
+  const products = productsData.map((product) => {
+    return (
+      <ProductCard 
+        key={product.id}
+        {...product}
+      />
+    )
+  })
   return (
     <>
       <div className="products-banner">
@@ -56,23 +65,8 @@ export default function OurProducts() {
             </select>
           </div>
         </div>
-        <div className="products">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        <div className="products px-100px flex flex-wrap gap-50px justify-center">
+          {products}
         </div>
         {/* <div className="button-container">
           <button type="button">See More</button>

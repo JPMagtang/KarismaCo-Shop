@@ -1,4 +1,3 @@
-import Headliner from "./Headliner";
 import Navigation from "./Navigation";
 
 type LayoutProps = {
@@ -8,9 +7,9 @@ type LayoutProps = {
 export default function Layout({children}: LayoutProps) {
     return(
         <div className="layout">
-            <Headliner />
             <Navigation />
             <div className="layout-container">
+                <div className="spacer h-100px"></div>
                 {children}
             </div>
         </div>

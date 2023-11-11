@@ -19,11 +19,8 @@
     font-family: "Playfair Display";
     color: var(--font-color);
     font-weight: 400;
-    /* border: 0.5px solid royalblue; */
 }
-.layout-container {
-    margin-top: 100px;
-}
+
 .footer {
     margin-bottom: 100px;
 }
@@ -45,19 +42,19 @@
     border-radius: 0px 0px 250px 0px;
     object-position: right 100% top 31%;
 }
-.button-container {
+/* .button-container {
     display: block;
     height: 35px;
     display: flex;
     width: 100%;
     justify-content: center;
-}
+} */
 .banner button {
     display: block;
     position: relative;
     bottom: 100px;
 }
-button {
+/* button {
     width: 230px;
     height: 50px;
     border-radius: 20px;
@@ -65,18 +62,18 @@ button {
     align-content: center;
     background-color: var(--bg-color);
     border: 2px solid var(--gold);
-}
+} */
 .featured .button-container {
     margin-bottom: 75px;
 }
-.products {
+/* .products {
     padding: 0 100px 0 100px;
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
     justify-content: center;
-}
-.product {
+} */
+/* .product {
     height: 370px;
     width: 260px;
     display: flex;
@@ -87,28 +84,28 @@ button {
     width: inherit;
     object-fit: cover;
     border-radius: 5px;
-}
+} */
 .product ul {
     display: flex;
     list-style-type: none;
     gap: 1rem;
 }
-.section-header {
+/* .section-header {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 35px;
-}
-.section-header h3 {
+} */
+/* .section-header h3 {
     width: 30vw;
     text-justify: center;
     text-align: center;
-}
-.section-liner {
+} */
+/* .section-liner {
     width: 100%;
     border: 1.5px solid var(--gold);
-}
+} */
 .about {
     height: 400px;
     background-color: var(--powder-blue);
@@ -199,7 +196,7 @@ a {
 
 /* CONTACT US */
 .contacts {
-    margin-top: 180px;
+    margin-top: 50px;
     margin-bottom: 100px;
     display: flex;
     justify-content: center;

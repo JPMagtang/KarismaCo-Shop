@@ -1,9 +1,9 @@
 import type { V2_MetaFunction, LinksFunction } from "@remix-run/node";
 import globalStyle from "~/styles/global.css";
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: globalStyle }
-];
+// export const links: LinksFunction = () => [
+//   { rel: "stylesheet", href: globalStyle }
+// ];
 
 export const meta: V2_MetaFunction = () => {
   return [
